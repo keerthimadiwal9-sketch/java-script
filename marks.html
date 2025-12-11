@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>Exam pass fail Predictor</h1>
+    <input type="text" name="" id="name" placeholder="Enter your name">
+    <p id="result"></p>
+    <button onclick="exam()">Check Result</button>
+    </div>
+    <style>
+        body{
+            height: 100vh;
+            background-color: burlywood;
+            padding: 0;
+            display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        div{
+            width: 500px;
+            height: 250px;
+            align-items: center;
+            text-align: center; 
+            justify-content: center;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid black;
+            background-color: indianred;
+            box-shadow:10px 20px 30px  brown;
+    }
+    button{
+        background-color:rgb(115, 180, 116);
+        border-radius: 30%;
+    }
+    .pass{
+        color: green;
+    }
+    .fail{
+        color: red;
+    }
+    
+    </style>
+
+    <script>
+        function exam(){
+            var name = document.getElementById("name").value;
+            var marks = Math.floor(Math.random()*100);
+            var resultText = "";
+            var resultClass ="";
+            if (marks<35){
+                resultText = name + " has failed in exam.";
+                resultClass = "fail";
+            }else{
+                resultClass = "pass";
+
+                if(marks>=75){
+                    resultText = name + " PASSED with Distinction.";
+                }else if(marks>=60){
+                    resultText = name + " PASSED with First class.";
+                }else if(marks>=50){
+                    resultText = name + " PASSED with Second class.";
+                }
+                else{
+                    resultText = name + " PASSED (Just Pass).";
+                }
+            }
+            
+            var resultPara = document.getElementById("result");
+            resultPara.innerHTML = resultText;
+            resultPara.className = resultClass;
+
+        }
+    </script>
+    
+</body>
+</html>

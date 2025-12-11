@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1><b>LOVE PREDICTOR</b></h1>
+        <br>
+    <input type="text" name="" id="name" placeholder="Your name">
+    <br>
+    <br>
+    <input type="text" name="" id="love" placeholder="Partner name" >
+    <p id="result"></p>
+    <br>
+    <button onclick="love()">Calculate Love</button>
+    </div>
+    <style>
+        body{
+            height: 100vh;
+            background-color: burlywood;
+            padding: 0;
+            display: flex;
+           justify-content: center;
+           align-items: center;
+           background-image: url("https://marketplace.canva.com/EAF2pQEHqgs/1/0/450w/canva-pink-and-dark-purple-minimalist-simple-aesthetic-cloud-sky-phone-wallpaper-mt9THbr11_8.jpg");
+           background-size: cover;
+        }
+        div{
+            width: 500px;
+            height: 300px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid black;
+            background-color: rgb(162, 114, 114);
+            box-shadow:20px 40px 60px 30px  brown;
+    }
+    button{
+        background-color:rgb(47, 30, 35);
+        color: darkgrey;
+    }
+    .not fixed{
+        color: green;
+    }
+    .fixed{
+        color: blanchedalmond;
+    }
+    </style>
+
+    <script>
+        function love(){
+            var name = document.getElementById("name").value;
+            var name = document.getElementById("love").value;
+            var marks = Math.floor(Math.random()*101);
+            var resultText = "";
+            var resultClass ="";
+            if (marks<20){
+                resultText = " Don't try";
+                resultClass = "not fixed";
+            }else{
+                resultClass = "fixed";
+
+                if(marks>=20){
+                    resultText =  " LOVE";
+                }else if(marks>=60){
+                    resultText = " Marriage is fixed. ";
+                }else if(marks>=90){
+                    resultText = " Marriage is fixed";
+                }
+                else{
+                    resultText =" Marriage is fixed";
+                }
+            }
+            
+            var resultPara = document.getElementById("result");
+            resultPara.innerHTML = resultText;
+            resultPara.className = resultClass;
+
+        }
+    </script>
+    
+</body>
+</html>

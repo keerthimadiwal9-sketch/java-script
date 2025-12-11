@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            height: 100vh;
+            padding: 0;
+            display: flex;
+           justify-content: center;
+           align-items: center;
+           text-align: center;
+           flex-direction: column;
+           font-family:Arial, Helvetica, sans-serif;
+        } 
+        button{
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    </style>
+    <h1></h1>
+    <button onclick="changebg()">Click for different</button>
+    <script>
+        function changebg(){
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var color = "rgb(" + r +"," + g +"," + b + ")";
+            document.body.style.backgroundColor = color;
+            document.querySelector("h1").innerHTML = color;
+        }
+    </script>
+
+</body>
+</html>
